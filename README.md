@@ -1,5 +1,5 @@
 # OrbitModel
-Modeling a Two-Body System in Space
+Modeling an Astronomical Two-Body System
 
 This code was created in partnership with Franck Belemkoabga and Gyalpo Dongo-Aguirre for an MIT 8.012 Mini Project.
 It shows the orbit of any two-body system following Kepler's laws (although our code starts from first principles- 
