@@ -9,6 +9,6 @@ If Django is not installed:
 
 To start the Django application:
 -navigate to 
-C:\Users\ariel\github\ArielProject\django\physics_project
+C:\Users\ariel\github\OrbitModel\django\physics_project
 
 - python manage.py runserver  (this starts the webserver)
