@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
 <body>
 
 <p>Input your name</p>
@@ -10,4 +10,17 @@
 
 </body>
 
-</html>
+</html> -->
+
+<html>
+   <head>
+      <title>{{ title }}</title>
+   </head>
+   <body>
+     <ul>
+       {% for item in items %}
+         <li>{{ escape(item) }}</li>
+       {% end %}
+     </ul>
+   </body>
+ </html>

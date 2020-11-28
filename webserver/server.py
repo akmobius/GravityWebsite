@@ -12,10 +12,12 @@ class ArielHandler(tornado.web.RequestHandler):
 
 class TestHandler(tornado.web.RequestHandler):
     def get(self):
-        self.write('<html><body><p>Input your name</p><form action="/test" method="POST">'
-                   '<input type="text" name="yourname">'
-                   '<input type="submit" value="Submit">'
-                   '</form></body></html>')
+        items = ["Item 1", "Item 2", "Item 3"]
+        self.render("sampleinput.html", title="My title", items=items)
+        # self.write('<html><body><p>Input your name</p><form action="/test" method="POST">'
+        #            '<input type="text" name="yourname">'
+        #            '<input type="submit" value="Submit">'
+        #            '</form></body></html>')
 
     def post(self):
         self.set_header("Content-Type", "text/plain")

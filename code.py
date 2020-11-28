@@ -1,5 +1,5 @@
 # OrbitModel
-Modeling a Two-Body System in Space
+#Modeling a Two-Body System in Space
 """
 Code to model orbit of a two-body system. Can be used to teach Kepler's Laws.
 
