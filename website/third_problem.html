@@ -51,7 +51,7 @@
 									<p><strong>When the rocket turns off its engines, it stops pushing against the Earth’s gravity.</strong></p>
 									<p>Because Earth’s gravity wants to pull the rocket back down to Earth, it begins to fall. However, it’s still moving very fast (remember- no air resistance in space)! Since it’s moving so fast, it misses the Earth as it falls. This happens over and over again - gravity keeps trying to pull the rocket down, but because the rocket is moving fast it keeps missing the Earth. This causes the rocket to start <strong>orbiting the Earth</strong>, kind of like the moon.</p>
 									<p>Play around with the simulation below to see how changing the mass of the two bodies impacts the shape of their orbits. (Remember that changing the mass changes the gravity between the bodies, which is why the orbits change!)</p>
-								<div>
+									<div>
 										<head>
 											<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
 											<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
@@ -120,7 +120,7 @@
 										<script>
 											mdc.ripple.MDCRipple.attachTo(document.querySelector('.drop-button'));
 											var smallPlanetSlider=mdc.slider.MDCSlider.attachTo(document.querySelector('#smallplanet'));
-											var largePlanetSlider=mdc.slider.MDCSlider.attachTo(document.querySelector('#largeplanet'));
+											var largePlanetSlider=mdc.slider.MDCSlider.attachTo(document.querySelector('#largePlanet'));
 											smallPlanetSlider.listen('MDCSlider:change', function(ev) { adjustSmallPlanet(ev.detail.value);}.bind(this));
 											largePlanetSlider.listen('MDCSlider:change', function(ev) {adjustLargePlanet(ev.detail.value); }.bind(this));
 											
@@ -132,30 +132,30 @@
 											var planets=new planetMachine(parameters);
 											
 											var adjustSmallPlanet = function(smallExponent){
-											if (smallExponent==24){
-												document.getElementById("smallMassExponent").innerHTML=smallExponent + "(Earth)";
-												planets.setMass(0,smallExponent);
-											}
-											else{
-												document.getElementById("smallMassExponent").innerHTML=smallExponent;
-												planets.setMass(0,smallExponent);
-											}
+												if (smallExponent==24){
+													document.getElementById("smallMassExponent").innerHTML=smallExponent + "(Earth)";
+													planets.setMass(0,smallExponent);
+												}
+												else{
+													document.getElementById("smallMassExponent").innerHTML=smallExponent;
+													planets.setMass(0,smallExponent);
+												}
 											}
 											
 											var adjustLargePlanet = function(largeExponent){
-											if (largeExponent==30){
-												document.getElementById("largeMassExponent").innerHTML=largeExponent + "(Sun)";
-												planets.setMass(1,largeExponent);
-											}
-											else{
-												document.getElementById("largeMassExponent").innerHTML=largeExponent;
-												planets.setMass(1,largeExponent);
-											}  
+												if (largeExponent==30){
+													document.getElementById("largeMassExponent").innerHTML=largeExponent + "(Sun)";
+													planets.setMass(1,largeExponent);
+												}
+												else{
+													document.getElementById("largeMassExponent").innerHTML=largeExponent;
+													planets.setMass(1,largeExponent);
+												}  
 											}
 										// still have to update mass by multiplying it by exponent
 										</script>
-									</p>
-								</div>
+										</p>
+									</div>
 									<p>Try to make an orbit that looks similar to the orbit of the Earth around the sun. Maybe try making two stars and see how they orbit around each other. Explore!</p>
 									<p>Why do you think the orbit of two objects with very different masses looks different than the orbit of two objects with the same mass?</p>
 									<p align = "center"><input placeholder = "Your guess"></input></p>
