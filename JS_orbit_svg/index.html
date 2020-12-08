@@ -1,0 +1,115 @@
+<html>
+<head>
+<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body class="mdc-typography">
+
+    <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+          <div class="mdc-layout-grid__cell--span-6">
+
+            <h7 class="mdc-typography--headline5">Mass of small body: 6*10^<span id="smallMassExponent">24 (Earth)</span></h7>
+
+            <div class="mdc-slider mdc-slider--discrete" id="smallplanet" data-step="1">
+                <div class="mdc-slider__track">
+                  <div class="mdc-slider__track--inactive"></div>
+                  <div class="mdc-slider__track--active">
+                    <div class="mdc-slider__track--active_fill"></div>
+                  </div>
+                </div>
+                <div class="mdc-slider__thumb" role="slider" tabindex="0" aria-label="Discrete slider demo" aria-valuemin="20" aria-valuemax="29" aria-valuenow="24">
+                  <div class="mdc-slider__value-indicator-container">
+                    <div class="mdc-slider__value-indicator">
+                      <span class="mdc-slider__value-indicator-text">
+                        24
+                      </span>
+                    </div>
+                  </div>
+                  <div class="mdc-slider__thumb-knob"></div>
+                </div>
+            </div>        
+
+          </div>
+          <div class="mdc-layout-grid__cell--span-6">
+
+            <h7 class="mdc-typography--headline5">Mass of large body: 2*10^<span id="largeMassExponent">30 (Sun)</span></h7>
+
+            <div class="mdc-slider mdc-slider--discrete" id="largePlanet" data-step="1">
+                <div class="mdc-slider__track">
+                  <div class="mdc-slider__track--inactive"></div>
+                  <div class="mdc-slider__track--active">
+                    <div class="mdc-slider__track--active_fill"></div>
+                  </div>
+                </div>
+                <div class="mdc-slider__thumb" role="slider" tabindex="0" aria-label="Discrete slider demo" aria-valuemin="30" aria-valuemax="33" aria-valuenow="30">
+                  <div class="mdc-slider__value-indicator-container">
+                    <div class="mdc-slider__value-indicator">
+                      <span class="mdc-slider__value-indicator-text">
+                        30
+                      </span>
+                    </div>
+                  </div>
+                  <div class="mdc-slider__thumb-knob"></div>
+                </div>
+            </div>        
+
+          </div>
+
+          <div class="mdc-layout-grid__cell--span-12">
+            <button class="mdc-button drop-button" onclick="planets.move()">
+                <div class="mdc-button__ripple"></div>
+                <span class="mdc-button__label">Show orbit</span>
+            </button>        
+          </div>
+        </div>
+    </div>
+
+
+<svg version="1.1" id="svgRoot" baseProfile="full" width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+ 
+</svg>
+
+<script src="planetMachine.js"></script>
+<script>
+mdc.ripple.MDCRipple.attachTo(document.querySelector('.drop-button'));
+var smallPlanetSlider=mdc.slider.MDCSlider.attachTo(document.querySelector('#smallplanet'));
+var largePlanetSlider=mdc.slider.MDCSlider.attachTo(document.querySelector('#largeplanet'));
+smallPlanetSlider.listen('MDCSlider:change', function(ev) { adjustSmallPlanet(ev.detail.value);}.bind(this));
+largePlanetSlider.listen('MDCSlider:change', function(ev) {adjustLargePlanet(ev.detail.value); }.bind(this));
+
+var parameters={
+        svg : document.getElementById("svgRoot"),
+        //mass is an exponent: small planet 6*10^{exponent} (earth); large body 2*10^{exponent}
+        planets: [{r: 20, mass: 24, color: "#FF0000"},{r: 20, mass: 30, color: "#0000FF"}],
+    };
+    var planets=new planetMachine(parameters);
+
+var adjustSmallPlanet = function(smallExponent){
+  if (smallExponent==24){
+    document.getElementById("smallMassExponent").innerHTML=smallExponent + "(Earth)";
+    planets.setMass(0,smallExponent);
+  }
+  else{
+    document.getElementById("smallMassExponent").innerHTML=smallExponent;
+    planets.setMass(0,smallExponent);
+  }
+}
+
+var adjustLargePlanet = function(largeExponent){
+  if (largeExponent==30){
+    document.getElementById("largeMassExponent").innerHTML=largeExponent + "(Sun)";
+    planets.setMass(1,largeExponent);
+  }
+  else{
+    document.getElementById("largeMassExponent").innerHTML=largeExponent;
+    planets.setMass(1,largeExponent);
+  }  
+}
+// still have to update mass by multiplying it by exponent
+
+</script
+</body>
+
+</html>
