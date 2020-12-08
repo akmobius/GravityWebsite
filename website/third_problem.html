@@ -38,20 +38,128 @@
 					<div class="container">
 						<div class="row main-row">
 							<div class="col-12">
-
 								<section>
 									<h2>Ouside of the Earth</h2>
-									<p>Let’s keep thinking about that rocket. How would it move if it turned off its engines right after it got out of Earth’s atmosphere (into space)? Write down your guess below (Would it move in a straight line? A circle?)</p>
+									<p>Let’s keep thinking about that rocket. How would it move if it turned off its engines right after it got out of Earth’s atmosphere (into space)? Would it move in a straight line? A circle? Look at the two options below and write down your guess. (As always, don’t be afraid of getting things wrong!)</p>
 									<p align = "center"><input placeholder = "Your guess"></input></p>
 									<p>In order to understand this better, let’s clarify a few concepts.</p>
-									<p>Any two objects have a gravitational attraction between them. You and your computer have a gravitational interaction - you and your computer just have very little mass so this attraction doesn’t do much! But, as you walk away from your computer, the gravitational attraction between you and your computer gets even smaller. This is why we aren’t pulled off the Earth towards the sun. Even though the sun has more mass than the Earth, it’s so far away that the gravitational attraction between us and the Earth is much bigger than the gravitational attraction between us and the sun.</p>
+									<p>Any two objects have a gravitational attraction between them. Technically, your computer is pulling you towards it right now(!) - it’s just that the computer has very little mass so this attraction doesn’t do very much. However, as you walk away from your computer, the gravitational attraction between you and your computer gets <strong>even smaller.</strong></p>
 									<p>On Earth, in order to keep flying forward, an airplane has to keep its engines running at all times. This is because of air resistance. However, in space there is no air. This means that if a rocket turns off its engines, it won’t speed up anymore… but it won’t slow down either- there’s no air making it slow down! So if a rocket turns off its engines once it is in space, it will keep moving at the same speed it was before the engines were turned off.</p>
-									<p>Now let’s get back to the original question. What happens when the rocket turns off its engines right after it gets into space? </p>
+									<p>This is why we aren’t pulled off the Earth towards the sun. Even though the sun has more mass than the Earth, the sun is so far away that it pulls us much less than the Earth does.</p>
+									<p>Now let’s get back to the original question. What happens when the rocket turns off its engines right after it gets into space?</p>
 									<p align = "center"><input placeholder = "Your guess"></input></p>
-									<p>When the rocket turns off its engines, it stops pushing against the Earth’s gravity.</p>
-									<p>Because Earth’s gravity wants to pull the rocket back down to Earth, it begins to fall. However, it’s still moving very fast (remember- no air resistance in space)! Since it’s moving so fast, it misses the Earth. This happens over and over again - gravity keeps trying to pull the rocket down, but because the rocket is moving fast it keeps missing the Earth. This causes the rocket to start orbiting the Earth, kind of like the moon.</p>
+									<p><strong>When the rocket turns off its engines, it stops pushing against the Earth’s gravity.</strong></p>
+									<p>Because Earth’s gravity wants to pull the rocket back down to Earth, it begins to fall. However, it’s still moving very fast (remember- no air resistance in space)! Since it’s moving so fast, it misses the Earth as it falls. This happens over and over again - gravity keeps trying to pull the rocket down, but because the rocket is moving fast it keeps missing the Earth. This causes the rocket to start <strong>orbiting the Earth</strong>, kind of like the moon.</p>
 									<p>Play around with the simulation below to see how changing the mass of the two bodies impacts the shape of their orbits. (Remember that changing the mass changes the gravity between the bodies, which is why the orbits change!)</p>
+								<div>
+										<head>
+											<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+											<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+											<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+										</head>
+										<p class="mdc-typography">
+											<div class="mdc-layout-grid">
+												<div class="mdc-layout-grid__inner">
+												  <div class="mdc-layout-grid__cell--span-6">
+													<h7 class="mdc-typography--headline5">Mass of small body: 6*10^<span id="smallMassExponent">24 (Earth)</span></h7>
+													<div class="mdc-slider mdc-slider--discrete" id="smallplanet" data-step="1">
+														<div class="mdc-slider__track">
+														  <div class="mdc-slider__track--inactive"></div>
+														  <div class="mdc-slider__track--active">
+															<div class="mdc-slider__track--active_fill"></div>
+														  </div>
+														</div>
+														<div class="mdc-slider__thumb" role="slider" tabindex="0" aria-label="Discrete slider demo" aria-valuemin="20" aria-valuemax="29" aria-valuenow="24">
+														  <div class="mdc-slider__value-indicator-container">
+															<div class="mdc-slider__value-indicator">
+															  <span class="mdc-slider__value-indicator-text">
+																24
+															  </span>
+															</div>
+														  </div>
+														  <div class="mdc-slider__thumb-knob"></div>
+														</div>
+													</div>        
+										
+												  </div>
+												  <div class = "mdc-layout-grid__cell--span-6">
+										
+													<h7 class = "mdc-typography--headline5">Mass of large body: 2*10^<span id="largeMassExponent">30 (Sun)</span></h7>
+										
+													<div class = "mdc-slider mdc-slider--discrete" id="largePlanet" data-step="1">
+														<div class = "mdc-slider__track">
+														  <div class ="mdc-slider__track--inactive"></div>
+														  <div class ="mdc-slider__track--active">
+															<div class ="mdc-slider__track--active_fill"></div>
+														  </div>
+														</div>
+														<div class="mdc-slider__thumb" role="slider" tabindex="0" aria-label="Discrete slider demo" aria-valuemin="30" aria-valuemax="33" aria-valuenow="30">
+														  <div class="mdc-slider__value-indicator-container">
+															<div class="mdc-slider__value-indicator">
+															  <span class="mdc-slider__value-indicator-text">
+																30
+															  </span>
+															</div>
+														  </div>
+														  <div class="mdc-slider__thumb-knob"></div>
+														</div>
+													</div>        
+												  </div>
+												  <div class="mdc-layout-grid__cell--span-12">
+													<button class="mdc-button drop-button" onclick="planets.move()">
+														<div class="mdc-button__ripple"></div>
+														<span class="mdc-button__label">Show orbit</span>
+													</button>        
+												  </div>
+												</div>
+											</div>
+										<svg version="1.1" id="svgRoot" baseProfile="full" width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+										</svg>
+										
+										<script src="assets/js/planetMachine.js"></script>
+										<script>
+											mdc.ripple.MDCRipple.attachTo(document.querySelector('.drop-button'));
+											var smallPlanetSlider=mdc.slider.MDCSlider.attachTo(document.querySelector('#smallplanet'));
+											var largePlanetSlider=mdc.slider.MDCSlider.attachTo(document.querySelector('#largeplanet'));
+											smallPlanetSlider.listen('MDCSlider:change', function(ev) { adjustSmallPlanet(ev.detail.value);}.bind(this));
+											largePlanetSlider.listen('MDCSlider:change', function(ev) {adjustLargePlanet(ev.detail.value); }.bind(this));
+											
+											var parameters={
+													svg : document.getElementById("svgRoot"),
+													//mass is an exponent: small planet 6*10^{exponent} (earth); large body 2*10^{exponent}
+													planets: [{r: 20, mass: 24, color: "#FF0000"},{r: 20, mass: 30, color: "#0000FF"}],
+												};
+											var planets=new planetMachine(parameters);
+											
+											var adjustSmallPlanet = function(smallExponent){
+											if (smallExponent==24){
+												document.getElementById("smallMassExponent").innerHTML=smallExponent + "(Earth)";
+												planets.setMass(0,smallExponent);
+											}
+											else{
+												document.getElementById("smallMassExponent").innerHTML=smallExponent;
+												planets.setMass(0,smallExponent);
+											}
+											}
+											
+											var adjustLargePlanet = function(largeExponent){
+											if (largeExponent==30){
+												document.getElementById("largeMassExponent").innerHTML=largeExponent + "(Sun)";
+												planets.setMass(1,largeExponent);
+											}
+											else{
+												document.getElementById("largeMassExponent").innerHTML=largeExponent;
+												planets.setMass(1,largeExponent);
+											}  
+											}
+										// still have to update mass by multiplying it by exponent
+										</script>
+									</p>
+								</div>
 									<p>Try to make an orbit that looks similar to the orbit of the Earth around the sun. Maybe try making two stars and see how they orbit around each other. Explore!</p>
+									<p>Why do you think the orbit of two objects with very different masses looks different than the orbit of two objects with the same mass?</p>
+									<p align = "center"><input placeholder = "Your guess"></input></p>
+									<p>When two objects have different masses, it is a similar situation to the Earth and the sun (or the rocket and the Earth that we described above). The sun is pulling on the Earth (which is moving very fast), so instead of crashing into the sun, the Earth orbits the sun. The Earth is also pulling on the sun, but because the sun is so much bigger than the Earth, this pull isn’t making the sun move very much. However, when you have two bodies that have similar masses (like a binary star system), they still pull on each other in the same way as the Earth and the sun- it’s just that this pull is now big enough to make them <strong>both</strong> move around each other (making cool figure-8 shapes!).</p>
 								</section>
 
 							</div>
