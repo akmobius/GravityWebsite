@@ -77,7 +77,13 @@ function planetMachine(parameters){
 
 
     this.initAnimation=true;
+    this.drawing=false;
     this.move = function(){
+        if (this.drawing){
+            this.initAnimation=true;
+            return;
+        }
+        this.drawing=true;
         this.draw();
         let start;  //start time is initially undefined
         let previousTimestamp;
