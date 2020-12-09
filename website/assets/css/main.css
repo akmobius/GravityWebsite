@@ -1532,9 +1532,9 @@ input, select, textarea {
 		margin: 2.5% 0 2.5% 0;
 		padding: 0 40px 0 40px;
 		border-radius: 10px;
-		border: solid 1px #006e8b;
+		border: solid 1px #01075c;
 		box-shadow: inset 0px 0px 0px 1px #12a0bf, 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
-		background-color: #007b9d;
+		background-color: #3c009d;
 		height: 86px;
 	}
 
@@ -1592,7 +1592,7 @@ input, select, textarea {
 /* Banner */
 
 	#banner-wrapper {
-		background: #c8d2bc url(images/bg1.png);
+		background: #c6c9c9;
 		padding: 2em 0;
 	}
 

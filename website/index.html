@@ -9,6 +9,8 @@
 		<title>G-lab</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+		<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body>
@@ -38,7 +40,7 @@
 					<div class="container">
 						<div id="banner">
 							<h2>G-Lab</h2>
-							<span>This is <strong>G-Lab</strong>, an interactive learning website for students to learn about gravity and astrophysics in a more interactive way!<span>
+							<span>This is G-Lab, an interactive website for students to learn about gravity on Earth and in SPACE!<span>
 						</div>
 
 					</div>
@@ -54,7 +56,12 @@
 									<h2>What is Gravity?</h2>
 									<p>When we jump up, we fall back down to the ground. When we throw something up in the air, it comes back down and (those of us with good hand-eye coordination) can catch it. But why does this happen? <strong>Why are objects attracted to the Earth? And if everything is somehow pulled back down toward the Earth, how can something (like a rocket) leave Earth? </strong></p>
 									<p>Take some time to think about these questions and write down some of your ideas below. If you prefer to draw, feel free to sketch out our ideas on a separate page. <i>(Don’t be scared about getting anything wrong! We’re going to take a while to explore all of these concepts in more detail. This is just so that at the end of today’s lesson you can compare how your thinking has changed! If you have no idea, feel free to just write that.)</i></p>
-									<p align = "center"><input placeholder ="Your Response"></input></p>
+									<p align="center">
+										<label class="mdc-text-field mdc-text-field--filled mdc-text-field--no-label">
+											<span class="mdc-text-field__ripple"></span>
+											<input class="mdc-text-field__input" type="text" id="introQuestionGuess" placeholder="Your guess" aria-label="Label">
+											<span class="mdc-line-ripple"></span>
+										</label>
 									
 								</section>
 

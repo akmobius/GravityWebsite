@@ -9,6 +9,8 @@
 		<title>G-Lab 2nd Problem</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+		<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body>
@@ -42,8 +44,47 @@
 							<section>
 								<h2>Getting off Earth's surface</h2>
 								<p>Now let’s think about leaving the Earth. How can a rocket get off the Earth’s surface?</p>
-								<p align = "center"><input placeholder = "Your guess"></input></p>
-								<p>Basically, as long as the rocket is pushing off the ground more than gravity is pulling it back down, it will be able to take off. (This same logic can also be applied to an airplane taking off - however, because the airplane stays within the Earth’s atmosphere it doesn’t need as much of a push.)</p>
+								<p align="center">
+									<label class="mdc-text-field mdc-text-field--filled mdc-text-field--no-label">
+										<span class="mdc-text-field__ripple"></span>
+										<input class="mdc-text-field__input" type="text" id="rocketQuestionGuess" placeholder="Your guess" aria-label="Label">
+										<span class="mdc-line-ripple"></span>
+									</label>
+
+									<div class="mdc-touch-target-wrapper" id="rocketQuestionButton" onclick="QuestionGuessSubmit()">
+										<button class="mdc-button mdc-button--touch">
+										  <div class="mdc-button__ripple"></div>
+										  <span class="mdc-button__label">Check your answer</span>
+										  <div class="mdc-button__touch"></div>
+										</button>
+									  </div>
+									</p>
+
+									<p id="rocketQuestionAnswer" style="display: none;">
+										<em>
+											Basically, as long as the rocket is pushing off the ground more than gravity is pulling it back down, it will be able to take off. (This same logic can also be applied to an airplane taking off - however, because the airplane stays within the Earth’s atmosphere it doesn’t need as much of a push.) 
+											<p>
+												<br> 
+											</p>
+										<p align = "center">
+											<img src="images/escapevelocityvis.JPG" alt="Image of Escape Velocity" width="600" height="200">
+										</p>	
+										
+									</em></p>
+									<script>
+										if (localStorage.getItem("rocketQuestionGuess")!=undefined){
+											document.getElementById("rocketQuestionGuess").value=localStorage.getItem("rocketQuestionGuess");
+											document.getElementById("rocketQuestionButton").style.display="none";
+											document.getElementById("rocketQuestionAnswer").style.display="";
+										}
+										var QuestionGuessSubmit=function(){
+											localStorage.setItem("rocketQuestionGuess",document.getElementById("rocketQuestionGuess").value);
+											document.getElementById("rocketQuestionButton").style.display="none";
+											document.getElementById("rocketQuestionAnswer").style.display="";
+										}
+									</script>
+
+									
 							</section>
 
 						</div>
