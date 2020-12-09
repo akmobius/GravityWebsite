@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+<!--
+	Minimaxing by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	
+	
+	<head>
+		<title>G-Lab 1st Problem</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+		<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			p.solid {border-style: solid;}
+		</style>
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<header id="header">
+									<h1><a href="index.html" id="logo">G-Lab</a></h1>
+									<nav id="nav">
+										<a href="index.html">Homepage</a>
+										<a href="first_problem.html"  class="current-page-item">Stage One</a>
+										<a href="second_problem.html">Stage Two</a>
+										<a href="third_problem.html">Stage Three</a>
+									</nav>
+								</header>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Main -->
+				<div id="main">
+					<div class="container">
+						<div class="row main-row">
+							<div class="col-12">
+
+								<section>
+									<h2>Gravity on Earth</h2>
+									<p>Get out of your seat right now. Try jumping around - maybe even have a competition with your friends over who can jump the highest! What do you notice is the same about all of your jumps? Perhaps you see that it’s unclear who’s winning - everybody’s jumping to similar heights! Or maybe just that you all fall back to the ground at about the same time?</p>
+									<p>As you’ve probably guessed, the reason that we fall back to Earth is because Earth’s gravity is pulling us down. But did you know that gravity isn’t unique to Earth?</p>
+									<p>Gravity comes from an object’s <strong>mass </strong>(the amount of stuff in that object). All of the Earth’s mass pulls on all of our mass, making us stay on the ground. In fact, all of our mass pulls on all of the Earth’s mass too - it’s just that the Earth is so big that this gravitational interaction doesn’t move the Earth. However, if we suddenly transformed into giants, we could (maybe) become big enough to attract the Earth towards us!</p>
+									<p>So what do you think would happen if we magically blew up a bouncy ball to the size of a planet and placed it into orbit around the sun?</p>
+									<p align="center">
+										<label class="mdc-text-field mdc-text-field--filled mdc-text-field--no-label">
+											<span class="mdc-text-field__ripple"></span>
+											<input class="mdc-text-field__input" type="text" id="bouncyQuestionGuess" placeholder="Your guess" aria-label="Label">
+											<span class="mdc-line-ripple"></span>
+										</label>
+	
+										<div class="mdc-touch-target-wrapper" id="bouncyQuestionButton" onclick="QuestionGuessSubmit()">
+											<button class="mdc-button mdc-button--touch">
+											  <div class="mdc-button__ripple"></div>
+											  <span class="mdc-button__label">Check your answer</span>
+											  <div class="mdc-button__touch"></div>
+											</button>
+										  </div>
+										</p>
+	
+										<p id="bouncyQuestionAnswer" style="display: none;"><em>The ball will attract everything around it - kind of like a new planet!</em></p>
+										<script>
+											if (localStorage.getItem("bouncyQuestionGuess")!=undefined){
+												document.getElementById("bouncyQuestionGuess").value=localStorage.getItem("bouncyQuestionGuess");
+												document.getElementById("bouncyQuestionButton").style.display="none";
+												document.getElementById("bouncyQuestionAnswer").style.display="";
+											}
+											var QuestionGuessSubmit=function(){
+												localStorage.setItem("bouncyQuestionGuess",document.getElementById("bouncyQuestionGuess").value);
+												document.getElementById("bouncyQuestionButton").style.display="none";
+												document.getElementById("bouncyQuestionAnswer").style.display="";
+											}
+										</script>
+									<p>Because the mass (the amount of stuff in an object) of everything on Earth is small compared to the mass of Earth itself, when we’re dealing with the movement of objects on our planet we can ignore the gravity of everything other than the Earth.</p>
+									<p>
+										<hr><br>
+									</p>
+									<p>This leads us to another interesting problem: what happens when Earth’s gravity interacts with two things that have very different masses?  Imagine a situation where you’re dropping two balls - one weighs 10 pounds, and the other weighs one pound. Which one do you think will hit the ground first?</p>
+									<p>First, let’s take a guess. Write down your idea here:</p>
+									
+									<p align="center">
+										<label class="mdc-text-field mdc-text-field--filled mdc-text-field--no-label">
+											<span class="mdc-text-field__ripple"></span>
+											<input class="mdc-text-field__input" type="text" id="ballQuestionInitialGuess" placeholder="Your guess" aria-label="Label">
+											<span class="mdc-line-ripple"></span>
+										</label>
+	
+										
+										</p>
+									<p>Now, let’s explore what actually happens:</p>
+									
+										
+									<p class="solid">First let’s think about the same two balls on a table. Just for fun, let’s attach the balls to a leash. If you pull both of them, the less massive one will go faster. Imagine this in your head - it’s much easier to make a lighter object move than a heavier one (think about pulling an elephant on a leash vs pulling a dog on a leash), so if you give them both the same exact pull, the smaller one goes faster. However, if you pull the heavier object more, it can move with the smaller one.</p>
+									<p class="solid">Remember that the amount of gravity something has depends on how heavy it is. This is why we feel the effects of Earth’s gravity but not of a pencil’s gravity - the pull of the Earth (a super heavy object) is much bigger than the pull of a pencil (a super light object)!. When you’re dropping a ball, gravity pulls a little more on the heavier ball then on the lighter ball. So just like how pulling the heavier ball harder on a table causes it to move at the same speed as the smaller one, having gravity pull more on the heavier ball causes it to fall at the same speed as the smaller one. <strong>Both balls hit the ground at the same time!</strong></p>
+									<p>
+										<hr><br>
+									</p>
+									<p>Now let's explore this animation that demonstrates this concept! (Note that all mass is in kilograms for the simulation.)</p>
+									</body>
+									
+								<div>
+									<head>
+										<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+										<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+										<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+									</head>
+									<p class="mdc-typography">
+
+										<div class="mdc-layout-grid">
+											<div class="mdc-layout-grid__inner">
+											  <div class="mdc-layout-grid__cell--span-6">
+									
+												<h5 class="mdc-typography--headline5">Mass of red ball</h5>
+									
+												<div class="mdc-slider mdc-slider--discrete" id="redmass" data-step="10">
+													<div class="mdc-slider__track">
+													  <div class="mdc-slider__track--inactive"></div>
+													  <div class="mdc-slider__track--active">
+														<div class="mdc-slider__track--active_fill"></div>
+													  </div>
+													</div>
+													<div class="mdc-slider__thumb" role="slider" tabindex="0" aria-label="Discrete slider demo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+													  <div class="mdc-slider__value-indicator-container">
+														<div class="mdc-slider__value-indicator">
+														  <span class="mdc-slider__value-indicator-text">
+															50
+														  </span>
+														</div>
+													  </div>
+													  <div class="mdc-slider__thumb-knob"></div>
+													</div>
+												</div>        
+									
+											  </div>
+											  <div class="mdc-layout-grid__cell--span-6">
+									
+												<h5 class="mdc-typography--headline5">Mass of blue ball</h5>
+									
+												<div class="mdc-slider mdc-slider--discrete" id="bluemass" data-step="10">
+													<div class="mdc-slider__track">
+													  <div class="mdc-slider__track--inactive"></div>
+													  <div class="mdc-slider__track--active">
+														<div class="mdc-slider__track--active_fill"></div>
+													  </div>
+													</div>
+													<div class="mdc-slider__thumb" role="slider" tabindex="0" aria-label="Discrete slider demo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+													  <div class="mdc-slider__value-indicator-container">
+														<div class="mdc-slider__value-indicator">
+														  <span class="mdc-slider__value-indicator-text">
+															50
+														  </span>
+														</div>
+													  </div>
+													  <div class="mdc-slider__thumb-knob"></div>
+													</div>
+												</div>        
+									
+											  </div>
+									
+											  <div class="mdc-layout-grid__cell--span-12">
+												<button class="mdc-button drop-button" onclick="balls.letFall()">
+													<div class="mdc-button__ripple"></div>
+													<span class="mdc-button__label">Drop me!</span>
+												</button>        
+											  </div>
+											</div>
+										</div>
+									
+									
+									<svg version="1.1" id="svgRoot" baseProfile="full" width="800" height="300" xmlns="http://www.w3.org/2000/svg">
+									
+									<rect x="0" y="275" width="800" height="25" fill="#00FF00" />
+									 
+									</svg>
+									
+									<script src="assets/js/ballMachine.js"></script>
+									<script>
+									mdc.ripple.MDCRipple.attachTo(document.querySelector('.drop-button'));
+									var redSlider=mdc.slider.MDCSlider.attachTo(document.querySelector('#redmass'));
+									var blueSlider=mdc.slider.MDCSlider.attachTo(document.querySelector('#bluemass'));
+									redSlider.listen('MDCSlider:change', function(ev) { this.balls.setMass(0,ev.detail.value);}.bind(this));
+									blueSlider.listen('MDCSlider:change', function(ev) { this.balls.setMass(1,ev.detail.value); }.bind(this));
+									
+									var parameters={
+											svg : document.getElementById("svgRoot"),
+											balls: [{x: 100, y: 20, r: 20, mass: 50, color: "#FF0000"},{x: 300, y: 20, r: 20, mass: 50, color: "#0000FF"}],
+											ground: 275
+										};
+										var balls=new ballMachine(parameters);
+										
+									</script>
+									</p>
+								</div>
+									<p>This animation is obviously slowed down compared to what happens in real life. However, this allows you to see what happens to the speed of each ball as it falls. Are the balls speeding up as time goes on? Are they slowing down? Write down your observations here:</p>
+
+									<p align="center">
+									<label class="mdc-text-field mdc-text-field--filled mdc-text-field--no-label">
+										<span class="mdc-text-field__ripple"></span>
+										<input class="mdc-text-field__input" type="text" id="ballQuestionGuess" placeholder="Your guess" aria-label="Label">
+										<span class="mdc-line-ripple"></span>
+									</label>
+
+									<div class="mdc-touch-target-wrapper" id="ballQuestionButton" onclick="QuestionGuessSubmit()">
+										<button class="mdc-button mdc-button--touch">
+										  <div class="mdc-button__ripple"></div>
+										  <span class="mdc-button__label">Check your answer</span>
+										  <div class="mdc-button__touch"></div>
+										</button>
+									  </div>
+									</p>
+
+									<p id="ballQuestionAnswer" style="display: none;"><em>If you said that each second the ball falls a greater distance, you’d be correct! This is because the ball speeds up as it falls - gravity keeps pulling on it so it just keeps moving faster. Imagine pedaling a bicycle wheel - the more work you do, the faster it spins. Gravity is doing the same thing to the ball as your pedaling is doing to the bicycle wheel!</em></p>
+									<script>
+										if (localStorage.getItem("ballQuestionGuess")!=undefined){
+											document.getElementById("ballQuestionGuess").value=localStorage.getItem("ballQuestionGuess");
+											document.getElementById("ballQuestionButton").style.display="none";
+											document.getElementById("ballQuestionAnswer").style.display="";
+										}
+										var QuestionGuessSubmit=function(){
+											localStorage.setItem("ballQuestionGuess",document.getElementById("ballQuestionGuess").value);
+											document.getElementById("ballQuestionButton").style.display="none";
+											document.getElementById("ballQuestionAnswer").style.display="";
+										}
+									</script>
+								</section>
+
+								</div>
+							
+							<div>
+							<p>
+								<hr><br>
+							</p>
+							<p>
+								Now you may notice that in your daily life dropping balls isn’t quite this simple. Try dropping a piece of paper and a ball at the same time - what happens?</p>
+								<p align="center">
+									<label class="mdc-text-field mdc-text-field--filled mdc-text-field--no-label">
+										<span class="mdc-text-field__ripple"></span>
+										<input class="mdc-text-field__input" type="text" id="featherQuestionGuess" placeholder="Your guess" aria-label="Label">
+										<span class="mdc-line-ripple"></span>
+									</label>
+
+									<div class="mdc-touch-target-wrapper" id="featherQuestionButton" onclick="QuestionGuessSubmit()">
+										<button class="mdc-button mdc-button--touch">
+										  <div class="mdc-button__ripple"></div>
+										  <span class="mdc-button__label">Check your answer</span>
+										  <div class="mdc-button__touch"></div>
+										</button>
+									  </div>
+									</p>
+
+									<p id="featherQuestionAnswer" style="display: none;"><em>The paper floats down slowly while the ball falls quickly. This isn't because the ball is heavier than the paper. It is because of air resistance! In space, there is no air so they would fall at the same time!</em></p>
+									<script>
+										if (localStorage.getItem("featherQuestionGuess")!=undefined){
+											document.getElementById("featherQuestionGuess").value=localStorage.getItem("featherQuestionGuess");
+											document.getElementById("featherQuestionButton").style.display="none";
+											document.getElementById("featherQuestionAnswer").style.display="";
+										}
+										var QuestionGuessSubmit=function(){
+											localStorage.setItem("featherQuestionGuess",document.getElementById("featherQuestionGuess").value);
+											document.getElementById("featherQuestionButton").style.display="none";
+											document.getElementById("featherQuestionAnswer").style.display="";
+										}
+									</script>
+									
+									<p>You can see this in this short video by the BBC!</p>
+									<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/E43-CfukEgs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+							
+								</div>
+
+							<div class="col-12">
+
+								<article class="blog-post">
+									<footer class="controls">
+									<p align = "center">
+										<a href="second_problem.html" class="button">Next Stage</a>
+									</p>
+									</footer>
+								</article>
+
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+			<!-- Footer -->
+				<div id="footer-wrapper">
+					<div class="container">
+						<div class="row">
+							<div class="col-8 col-12-medium">
+
+
+							</div>
+							<div class="col-4 col-12-medium">
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

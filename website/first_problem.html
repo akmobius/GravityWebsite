@@ -60,6 +60,29 @@
 											<span class="mdc-line-ripple"></span>
 										</label>
 	
+										<div class="mdc-touch-target-wrapper" id="bouncyQuestionButton" onclick="bouncyQuestionGuessSubmit()">
+											<button class="mdc-button mdc-button--touch">
+											  <div class="mdc-button__ripple"></div>
+											  <span class="mdc-button__label">Check your answer</span>
+											  <div class="mdc-button__touch"></div>
+											</button>
+										  </div>
+										</p>
+	
+										<p id="bouncyQuestionAnswer" style="display: none;"><em>The ball will attract everything around it - kind of like a new planet!</em></p>
+										<script>
+											if (localStorage.getItem("bouncyQuestionGuess")!=undefined){
+												document.getElementById("bouncyQuestionGuess").value=localStorage.getItem("bouncyQuestionGuess");
+												document.getElementById("bouncyQuestionButton").style.display="none";
+												document.getElementById("bouncyQuestionAnswer").style.display="";
+											}
+											var bouncyQuestionGuessSubmit=function(){
+												localStorage.setItem("bouncyQuestionGuess",document.getElementById("bouncyQuestionGuess").value);
+												document.getElementById("bouncyQuestionButton").style.display="none";
+												document.getElementById("bouncyQuestionAnswer").style.display="";
+											}
+										</script>
+	
 										
 										</p>
 									<p>Because the mass (the amount of stuff in an object) of everything on Earth is small compared to the mass of Earth itself, when we’re dealing with the movement of objects on our planet we can ignore the gravity of everything other than the Earth.</p>
@@ -191,7 +214,7 @@
 										<span class="mdc-line-ripple"></span>
 									</label>
 
-									<div class="mdc-touch-target-wrapper" id="ballQuestionButton" onclick="QuestionGuessSubmit()">
+									<div class="mdc-touch-target-wrapper" id="ballQuestionButton" onclick="BallGuessSubmit()">
 										<button class="mdc-button mdc-button--touch">
 										  <div class="mdc-button__ripple"></div>
 										  <span class="mdc-button__label">Check your answer</span>
@@ -207,7 +230,7 @@
 											document.getElementById("ballQuestionButton").style.display="none";
 											document.getElementById("ballQuestionAnswer").style.display="";
 										}
-										var QuestionGuessSubmit=function(){
+										var BallGuessSubmit=function(){
 											localStorage.setItem("ballQuestionGuess",document.getElementById("ballQuestionGuess").value);
 											document.getElementById("ballQuestionButton").style.display="none";
 											document.getElementById("ballQuestionAnswer").style.display="";
@@ -230,7 +253,7 @@
 										<span class="mdc-line-ripple"></span>
 									</label>
 
-									<div class="mdc-touch-target-wrapper" id="featherQuestionButton" onclick="QuestionGuessSubmit()">
+									<div class="mdc-touch-target-wrapper" id="featherQuestionButton" onclick="FeatherGuessSubmit()">
 										<button class="mdc-button mdc-button--touch">
 										  <div class="mdc-button__ripple"></div>
 										  <span class="mdc-button__label">Check your answer</span>
@@ -246,7 +269,7 @@
 											document.getElementById("featherQuestionButton").style.display="none";
 											document.getElementById("featherQuestionAnswer").style.display="";
 										}
-										var QuestionGuessSubmit=function(){
+										var FeatherGuessSubmit=function(){
 											localStorage.setItem("featherQuestionGuess",document.getElementById("featherQuestionGuess").value);
 											document.getElementById("featherQuestionButton").style.display="none";
 											document.getElementById("featherQuestionAnswer").style.display="";
